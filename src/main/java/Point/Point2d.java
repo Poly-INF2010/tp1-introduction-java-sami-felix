@@ -10,7 +10,7 @@ public class Point2d extends AbstractPoint {
      * @param y Y coordinate
      */
     public Point2d(Double x, Double y) {
-        super(new double[] {0.0, 0.0});
+        super(new double[] {x, y});
     }
 
     /** TODO
@@ -19,6 +19,9 @@ public class Point2d extends AbstractPoint {
      */
     public Point2d(Double[] vector) {
         this(0.0, 0.0);
+        Double xCoords = vector[X];
+        Double yCoords = vector[Y];
+        Point2d point = new Point2d(xCoords, yCoords);
     }
 
     /**
@@ -38,7 +41,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d translate(Double[] translateVector) {
-        return null;
+        return new Point2d(this.X() + translateVector[X], this.Y() + translateVector[Y]);
     }
 
     /** TODO
@@ -47,7 +50,7 @@ public class Point2d extends AbstractPoint {
      * @return Translated point
      */
     public Point2d translate(Point2d translateVector) {
-        return null;
+        return new Point2d(this.X() + translateVector.X(), this.Y() + translateVector.Y());
     }
 
     /** TODO
