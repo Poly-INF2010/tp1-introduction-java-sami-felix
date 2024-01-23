@@ -1,5 +1,7 @@
 package Point;
 
+import java.awt.*;
+
 public class Point2d extends AbstractPoint {
     private final Integer X = 0;
     private final Integer Y = 1;
@@ -41,7 +43,9 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d translate(Double[] translateVector) {
-        return new Point2d(this.X() + translateVector[X], this.Y() + translateVector[Y]);
+        Double[] vector = {this.X(), this.Y()};
+        PointOperator.translate(vector, translateVector);
+        return this;
     }
 
     /** TODO
