@@ -11,8 +11,10 @@ public final class PointOperator {
      * @param translateVector Translation to apply
      */
     public static void translate(Double[] vector, Double[] translateVector) {
-        vector[0] += translateVector[0];
-        vector[1] += translateVector[1];
+        for (int i = 0 ; i < vector.length; i++)
+        {
+            vector[i] += translateVector[i];
+        }
     }
 
     /** TODO
@@ -22,15 +24,16 @@ public final class PointOperator {
      * @param rotationMatrix Matrix by which to rotate
      */
     public static void rotate(Double[] vector, Double[][] rotationMatrix) {
-        for (int i = 0; i < vector.length; i++)
+        for (int i = 0; i < rotationMatrix.length; i++)
         {
             double sum = 0;
             for (int j = 0; j < rotationMatrix[i].length; j++)
             {
-                sum += vector[i] * rotationMatrix[i][j];
+                sum += vector[j] * rotationMatrix[i][j];
+                vector[i] = sum;
             }
-            vector[i] = sum;
         }
+
     }
 
     /** TODO
