@@ -41,7 +41,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d translate(Double[] translateVector) {
-        PointOperator.translate(new Double[] {Double.valueOf(this.X), Double.valueOf(this.Y)}, translateVector);
+        PointOperator.translate(this.vector, translateVector);
         return this;
     }
 
@@ -51,7 +51,7 @@ public class Point2d extends AbstractPoint {
      * @return Translated point
      */
     public Point2d translate(Point2d translateVector) {
-        PointOperator.translate(new Double[]{Double.valueOf(this.X), Double.valueOf(this.Y)}, new Double[] {Double.valueOf(translateVector.X), Double.valueOf(translateVector.Y)});
+        PointOperator.translate(this.vector, translateVector.vector);
         return this;
     }
 
@@ -62,7 +62,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d rotate(Double[][] rotationMatrix) {
-        PointOperator.rotate(new Double[]{Double.valueOf(this.X), Double.valueOf(this.Y)}, rotationMatrix);
+        PointOperator.rotate(this.vector, rotationMatrix);
         return this;
     }
 
@@ -82,7 +82,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d divide(Double divider) {
-        PointOperator.divide( new Double[] {Double.valueOf(this.X), Double.valueOf(this.Y)}, divider);
+        PointOperator.divide(this.vector, divider);
         return this;
     }
 
@@ -93,7 +93,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d multiply(Double multiplier) {
-        PointOperator.multiply(new Double[] {Double.valueOf(this.X), Double.valueOf(this.Y)}, multiplier);
+        PointOperator.multiply(this.vector, multiplier);
         return this;
     }
 
@@ -104,7 +104,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d add(Double adder) {
-        PointOperator.add(new Double[] {Double.valueOf(this.X), Double.valueOf(this.Y)}, adder);
+        PointOperator.add(this.vector, adder);
         return this;
     }
 

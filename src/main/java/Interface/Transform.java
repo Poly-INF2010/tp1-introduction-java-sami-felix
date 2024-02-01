@@ -32,5 +32,6 @@ public class Transform implements Rotate, Translate{
         {
             t.translate(translateVector);
         }
+        return coords;
     }
 }
