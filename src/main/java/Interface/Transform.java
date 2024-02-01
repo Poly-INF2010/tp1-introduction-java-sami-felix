@@ -2,6 +2,7 @@ package Interface;
 
 import Point.Point2d;
 
+import java.awt.geom.Point2D;
 import java.util.Collection;
 
 public class Transform implements Rotate, Translate{
@@ -13,7 +14,8 @@ public class Transform implements Rotate, Translate{
      * @return rotated collection
      * */
     public Collection<Point2d> rotate(Collection<Point2d> coords, Double angle) {
-        return null;
+
+        return coords;
     }
 
     /** TODO
