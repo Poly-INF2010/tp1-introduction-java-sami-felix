@@ -20,8 +20,7 @@ public class Point2d extends AbstractPoint {
      * @param vector Vector containing X and Y coordinates
      */
     public Point2d(Double[] vector) {
-        this(0.0, 0.0);
-        Double[] newVector = new Double[] {vector[0], vector[1]};
+        super(new double[] {vector[0], vector[1]});
     }
 
 
@@ -42,7 +41,7 @@ public class Point2d extends AbstractPoint {
      */
     @Override
     public Point2d translate(Double[] translateVector) {
-
+        PointOperator.translate(new Double[] {Double.valueOf(this.X), Double.valueOf(this.Y)}, translateVector);
         return this;
     }
 
