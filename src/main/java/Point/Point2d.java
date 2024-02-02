@@ -72,7 +72,12 @@ public class Point2d extends AbstractPoint {
      * @return Rotated point
      */
     public Point2d rotate(Double angle) {
-        return new Point2d(this.X*Math.cos(angle), this.Y*Math.sin(angle));
+        Double[][] matrixFromAngle = {
+                {Math.cos(angle), -Math.sin(angle)},
+                {Math.sin(angle), Math.cos(angle)}
+        };
+        PointOperator.rotate(this.vector, matrixFromAngle);
+        return this;
     }
 
     /** TODO
