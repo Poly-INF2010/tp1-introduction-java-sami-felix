@@ -37,9 +37,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter C
      */
     public static BaseShape create_C() {
-        BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
-        return letterA;
+        BaseShape letterC = new BaseShape();
+        letterC.add(new Rectangle(35.0, 100.0));
+        return letterC;
     }
 
     /** TODO
@@ -47,9 +47,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter E
      */
     public static BaseShape create_E() {
-        BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
-        return letterA;
+        BaseShape letterE = new BaseShape();
+        letterE.add(new Ellipse(25.0, 40.0));
+        return letterE;
     }
 
     /** TODO

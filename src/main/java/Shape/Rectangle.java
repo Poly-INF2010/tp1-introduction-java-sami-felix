@@ -11,7 +11,7 @@ public class Rectangle extends BaseShape {
      * @param height Height of the rectangle
      */
     public Rectangle(Double width, Double height) {
-        BaseShape rectangle = new BaseShape();
+        super();
         Double startingX = -width/2;
         Double startingY = -height/2;
         for (Double k = 0.0; k < width*height;  k++)
@@ -20,7 +20,7 @@ public class Rectangle extends BaseShape {
             while(startingY < height/2)
             {
                 Point2d pointAdd = new Point2d(startingX, startingY);
-                rectangle.add(pointAdd);
+                this.add(pointAdd);
                 startingY += 0.5;
             }
         }
@@ -31,9 +31,10 @@ public class Rectangle extends BaseShape {
      * @param dimensions 2D point containing the width and height of the rectangle
      */
     public Rectangle(Point2d dimensions) {
+        super();
         Double width = dimensions.X();
         Double height = dimensions.Y();
-        BaseShape shape = new Rectangle(width, height);
+        this.add(new Rectangle(width, height));
     }
 
     /**
@@ -41,8 +42,8 @@ public class Rectangle extends BaseShape {
      * @param coords The collection of 2D points
      */
     private Rectangle(Collection<Point2d> coords) {
-        BaseShape rectangle = new BaseShape();
-        rectangle.addAll(coords);
+        super();
+        this.addAll(coords);
     }
 
     /** TODO
