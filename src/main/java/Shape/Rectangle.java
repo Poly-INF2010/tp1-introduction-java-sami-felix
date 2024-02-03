@@ -11,7 +11,19 @@ public class Rectangle extends BaseShape {
      * @param height Height of the rectangle
      */
     public Rectangle(Double width, Double height) {
-
+        BaseShape rectangle = new BaseShape();
+        Double startingX = -width/2;
+        Double startingY = -height/2;
+        for (Double k = 0.0; k < width*height;  k++)
+        {
+            startingX += 0.5;
+            while(startingY < height/2)
+            {
+                Point2d pointAdd = new Point2d(startingX, startingY);
+                rectangle.add(pointAdd);
+                startingY += 0.5;
+            }
+        }
     }
 
     /** TODO
