@@ -31,7 +31,9 @@ public class Rectangle extends BaseShape {
      * @param dimensions 2D point containing the width and height of the rectangle
      */
     public Rectangle(Point2d dimensions) {
-
+        Double width = dimensions.X();
+        Double height = dimensions.Y();
+        BaseShape shape = new Rectangle(width, height);
     }
 
     /**
@@ -39,7 +41,8 @@ public class Rectangle extends BaseShape {
      * @param coords The collection of 2D points
      */
     private Rectangle(Collection<Point2d> coords) {
-
+        BaseShape rectangle = new BaseShape();
+        rectangle.addAll(coords);
     }
 
     /** TODO
@@ -47,6 +50,7 @@ public class Rectangle extends BaseShape {
      */
     @Override
     public Rectangle clone() {
-        return null;
+        Rectangle newRectangle = new Rectangle(this.cloneCoords());
+        return newRectangle;
     }
 }
