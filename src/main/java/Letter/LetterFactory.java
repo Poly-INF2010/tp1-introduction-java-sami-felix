@@ -17,7 +17,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter A
      */
     public static BaseShape create_A()  {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
     /** TODO
@@ -25,7 +27,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter B
      */
     public static BaseShape create_B() {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
     /** TODO
@@ -33,7 +37,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter C
      */
     public static BaseShape create_C() {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
     /** TODO
@@ -41,7 +47,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter E
      */
     public static BaseShape create_E() {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
     /** TODO
@@ -49,7 +57,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter H
      */
     public static BaseShape create_H() {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
     /** TODO
@@ -57,7 +67,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter N
      */
     public static BaseShape create_N() {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
     /** TODO
@@ -65,7 +77,9 @@ public final class LetterFactory {
      * @return BaseShape containing the letter O
      */
     public static BaseShape create_O() {
-        return null;
+        BaseShape letterA = new BaseShape();
+        letterA.add(new Circle(25.0));
+        return letterA;
     }
 
 }
