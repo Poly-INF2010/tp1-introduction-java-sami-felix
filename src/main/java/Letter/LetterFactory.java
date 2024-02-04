@@ -21,7 +21,18 @@ public final class LetterFactory {
      */
     public static BaseShape create_A()  {
         BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
+
+        BaseShape sides = new Rectangle(maxWidth*0.2, maxHeight);
+        sides.translate(sides.getCoords(), new Point2d(-0.4*maxWidth, 0.0));
+        sides.rotate(sides.getCoords(), 0.2);
+        letterA.add(sides);
+
+        sides.rotate(sides.getCoords(), -0.4);
+        sides.translate(sides.getCoords(), new Point2d(0.75*maxWidth, -10.0));
+        letterA.add(sides);
+
+        letterA.add(new Rectangle(maxWidth*0.40, maxWidth*0.2));
+
         return letterA;
     }
 
@@ -75,7 +86,22 @@ public final class LetterFactory {
      */
     public static BaseShape create_E() {
         BaseShape letterE = new BaseShape();
-        letterE.add(new Ellipse(25.0, 40.0));
+
+        //Rectangle a gauche
+        BaseShape leftRect = new Rectangle(maxWidth * 0.35, maxHeight);
+        leftRect.translate(leftRect.getCoords(), new Point2d(-0.4*maxWidth, 0.0));
+        letterE.add(leftRect);
+
+        //Rectangle cote
+        BaseShape sideRect = new Rectangle(maxWidth, maxHeight*0.10);
+        letterE.add(sideRect);
+
+        sideRect.translate(sideRect.getCoords(), new Point2d(0.0, maxHeight*0.45));
+        letterE.add(sideRect);
+
+        sideRect.translate(sideRect.getCoords(), new Point2d(0.0, maxHeight*-0.9));
+        letterE.add(sideRect);
+
         return letterE;
     }
 
@@ -84,9 +110,20 @@ public final class LetterFactory {
      * @return BaseShape containing the letter H
      */
     public static BaseShape create_H() {
-        BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
-        return letterA;
+        BaseShape letterH = new BaseShape();
+
+        //Rectangle a gauche et droite
+        BaseShape sidesRect = new Rectangle(maxWidth * 0.2, maxHeight);
+        sidesRect.translate(sidesRect.getCoords(), new Point2d(-0.4*maxWidth, 0.0));
+        letterH.add(sidesRect);
+
+        sidesRect.translate(sidesRect.getCoords(), new Point2d(0.8*maxWidth, 0.0));
+        letterH.add(sidesRect);
+
+        BaseShape middle = new Rectangle(maxWidth, 0.2*maxWidth);
+        letterH.add(middle);
+
+        return letterH;
     }
 
     /** TODO
@@ -94,9 +131,24 @@ public final class LetterFactory {
      * @return BaseShape containing the letter N
      */
     public static BaseShape create_N() {
-        BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
-        return letterA;
+        BaseShape letterN = new BaseShape();
+
+
+        BaseShape sidesRect = new Rectangle(maxWidth * 0.2, maxHeight);
+
+        sidesRect.rotate(sidesRect.getCoords(), -0.2);
+        letterN.add(sidesRect);
+        sidesRect.rotate(sidesRect.getCoords(), 0.2);
+
+        sidesRect.translate(sidesRect.getCoords(), new Point2d(-0.4*maxWidth, 0.0));
+        letterN.add(sidesRect);
+
+        sidesRect.translate(sidesRect.getCoords(), new Point2d(0.8*maxWidth, 0.0));
+        letterN.add(sidesRect);
+
+
+
+        return letterN;
     }
 
     /** TODO
