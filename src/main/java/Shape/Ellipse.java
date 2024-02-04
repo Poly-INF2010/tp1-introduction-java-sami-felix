@@ -12,39 +12,19 @@ public class Ellipse extends BaseShape {
      */
     public Ellipse(Double widthDiameter, Double heightDiameter) {
         super();
+        Double widthRad = widthDiameter/2;
+        Double heightRad = heightDiameter/2;
 
-        Double xi = widthDiameter/2;
-        Double hxh = heightDiameter*heightDiameter;
-        Double wxw = widthDiameter*widthDiameter;
-        Double hhxww = hxh*wxw;
-        Double slope = 0.0;
-
-        // Creer l'axe du milieu
-        for (Double x = -widthDiameter/2; x <= widthDiameter/2; x+= 0.5){
-            this.add(new Point2d(x, 0.0));
-        }
-
-        //Les deux moities
-        for (Double y = 0.5; y <= heightDiameter/2; y += 0.5){
-            Double xf = xi - slope;
-            while (xf > 0){
-                if (xf*xf*hxh + y*y*wxw <= hhxww){
-                    break;
+        for(Double y=-heightRad; y<=heightRad; y+=0.5) {
+            for(Double x=-widthRad; x<=0; x+=0.5) {
+                Double dx = x / widthRad;
+                Double dy = y / heightRad;
+                if(dx*dx+dy*dy <= 1) {
+                    add(new Point2d(x, y));
+                    add(new Point2d(-x, y));
                 }
-                xf -= 0.5;
-            }
-
-            slope = xi - xf;
-            xi = xf;
-
-            for (Double x = -xi; x <= xi; x += 0.5)
-            {
-                this.add(new Point2d(x, -y));
-                this.add(new Point2d(x, y));
             }
         }
-
-
     }
 
     /** TODO
