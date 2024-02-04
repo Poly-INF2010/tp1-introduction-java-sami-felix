@@ -2,6 +2,9 @@ package Letter;
 
 import Point.Point2d;
 import Shape.*;
+import Shape.Rectangle;
+
+import java.awt.*;
 
 public final class LetterFactory {
     final static Double maxHeight = 150.0;
@@ -27,9 +30,26 @@ public final class LetterFactory {
      * @return BaseShape containing the letter B
      */
     public static BaseShape create_B() {
-        BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
-        return letterA;
+        BaseShape letterB = new BaseShape();
+
+        //Rectangle a gauche
+        BaseShape rectangle = new Rectangle(maxWidth * 0.35, maxHeight);
+        rectangle.translate(rectangle.getCoords(), new Point2d(-0.4*maxWidth, 0.0));
+        letterB.add(rectangle);
+
+        //Cercle de bas
+        BaseShape cercle1 = new Circle(maxWidth*0.6);
+        BaseShape cercle1Inside = new Circle(maxWidth*0.5);
+        cercle1.remove(cercle1Inside);
+        cercle1.translate(cercle1.getCoords(), new Point2d(0.0, maxHeight*0.25));
+        letterB.add(cercle1);
+
+        //Cercle de haut
+        cercle1.translate(cercle1.getCoords(), new Point2d(0.0, maxHeight*-0.5));
+        letterB.add(cercle1);
+
+
+        return letterB;
     }
 
     /** TODO
@@ -38,7 +58,14 @@ public final class LetterFactory {
      */
     public static BaseShape create_C() {
         BaseShape letterC = new BaseShape();
-        letterC.add(new Rectangle(35.0, 100.0));
+
+        letterC.add(new Ellipse(maxWidth, maxHeight));
+        letterC.remove(new Ellipse(maxWidth*0.80, maxHeight*0.80));
+
+        BaseShape rectangle = new Rectangle(maxWidth*0.50, maxHeight*0.40);
+        rectangle.translate(rectangle.getCoords(), new Point2d(maxWidth*0.3, 0.0));
+        letterC.remove(rectangle);
+
         return letterC;
     }
 
@@ -77,9 +104,10 @@ public final class LetterFactory {
      * @return BaseShape containing the letter O
      */
     public static BaseShape create_O() {
-        BaseShape letterA = new BaseShape();
-        letterA.add(new Circle(25.0));
-        return letterA;
+        BaseShape letterO = new BaseShape();
+        letterO.add(new Ellipse(maxWidth, maxHeight));
+        letterO.remove(new Ellipse(maxWidth*0.80, maxHeight*0.80));
+        return letterO;
     }
 
 }

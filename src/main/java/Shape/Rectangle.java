@@ -13,15 +13,13 @@ public class Rectangle extends BaseShape {
     public Rectangle(Double width, Double height) {
         super();
         Double startingX = -width/2;
+        Double endX = width/2;
         Double startingY = -height/2;
-        for (Double k = 0.0; k < width*height;  k++)
+        Double endY = height/2;
+        for (Double x = startingX; x < endX;  x += 0.5)
         {
-            startingX += 0.5;
-            while(startingY < height/2)
-            {
-                Point2d pointAdd = new Point2d(startingX, startingY);
-                this.add(pointAdd);
-                startingY += 0.5;
+            for (Double y = startingY; y < endY; y += 0.5){
+                add(new Point2d(x,y));
             }
         }
     }
