@@ -27,10 +27,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @param coords The collection of 2D points
      */
     public BaseShape(Collection<Point2d> coords) {
-        ArrayList<Point2d> newCoords = new ArrayList<Point2d>(coords);
-//        this.coords = new ArrayList<Point2d>(coords.size());
-//        this.coords.addAll(coords);
-        this.coords = newCoords;
+        this.coords = cloneCoords(coords);
     }
 
     /** TODO
