@@ -112,7 +112,7 @@ public class BaseShape extends Transform implements Cloneable {
      * @return Updated BaseShape
      * */
     public BaseShape replaceAll(Collection<Point2d> newCoords) {
-        this.removeAll(this.coords);
+        this.coords.clear();
         this.addAll(newCoords);
         return this;
     }
