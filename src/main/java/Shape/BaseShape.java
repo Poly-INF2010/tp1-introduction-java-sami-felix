@@ -99,7 +99,10 @@ public class BaseShape extends Transform implements Cloneable {
      * @return Updated BaseShape
      */
     public BaseShape removeAll(Collection<Point2d> coords) {
-        coords.clear();
+        for(Point2d t: coords)
+        {
+            this.coords.remove(t);
+        }
         return this;
     }
 
